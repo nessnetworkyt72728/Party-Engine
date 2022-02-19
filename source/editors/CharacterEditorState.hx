@@ -1,4 +1,4 @@
-//package editors;
+package editors;
 
 #if desktop
 import Discord.DiscordClient;
