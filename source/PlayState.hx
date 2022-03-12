@@ -1997,6 +1997,26 @@ class PlayState extends MusicBeatState
 			if(carTimer != null) carTimer.active = true;
 
 			var chars:Array<Character> = [boyfriend, gf, dad];
+		        if (health > 2)
+		health = 2;
+	if (healthBar.percent < 20)
+		iconP1.animation.curAnim.curFrame = 1;
+	else if (healthBar.percent > 20 && healthBar.percent < 80)
+		iconP1.animation.curAnim.curFrame = 0;
+	else if (healthBar.percent > 80)
+		iconP1.animation.curAnim.curFrame = 2;
+
+	switch(SONG.player2)
+	{
+		default:
+			if (healthBar.percent < 20)
+				iconP2.animation.curAnim.curFrame = 2;
+			else if (healthBar.percent > 20 && healthBar.percent < 80)
+				iconP2.animation.curAnim.curFrame = 0;
+			else if (healthBar.percent > 80)
+				iconP2.animation.curAnim.curFrame = 1;
+	} 
+
 			for (i in 0...chars.length) {
 				if(chars[i].colorTween != null) {
 					chars[i].colorTween.active = true;
